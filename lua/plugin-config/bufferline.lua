@@ -38,6 +38,6 @@ bufferline.setup {
             -- highlight = "Directory",
             text_align = "center"
         }},
-        separator_style = "thick"
+        -- separator_style = "thick"
     }
 }
