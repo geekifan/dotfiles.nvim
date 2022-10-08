@@ -5,13 +5,42 @@ if not status then
 end
 
 local keys = require('keybindings').nvimTreeList
+local icons = require('icons')
 
 nvim_tree.setup({
     view = {
         mappings = {
             custom_only = true,
             list = keys,
-        }
+        },
+    },
+    renderer = {
+        highlight_git = true,
+        indent_markers = {
+            enable = true,
+        },
+        icons = {
+            show = {
+                folder_arrow = false,
+            },
+            glyphs = {
+                git = {
+                    unstaged = icons.git.FileUnstaged,
+                    staged = icons.git.FileStaged,
+                    unmerged = icons.git.FileUnmerged,
+                    renamed = icons.git.FileRenamed,
+                    untracked = icons.git.FileUntracked,
+                    deleted = icons.git.FileDeleted,
+                    ignored = icons.git.FileIgnored,
+                }
+            },
+        },
+    },
+    diagnostics = {
+        enable = true,
+    },
+    git = {
+        ignore = false,
     },
 })
 
