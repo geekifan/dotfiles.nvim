@@ -25,3 +25,4 @@ My plugin list:
 | [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) | Extension manager like VSCode (usually used for LSP installation) |
 | [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | Beautiful neovim notification window |
 | [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git integrations |
+| [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Terminal support |

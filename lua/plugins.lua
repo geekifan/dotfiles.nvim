@@ -37,4 +37,5 @@ packer.startup(function()
     use {"neoclide/coc.nvim", branch = "release"}
     use "rcarriga/nvim-notify"
     use "lewis6991/gitsigns.nvim"
+    use {"akinsho/toggleterm.nvim", tag = "*"}
 end)

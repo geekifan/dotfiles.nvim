@@ -17,4 +17,5 @@ require("plugin-config.which-key")
 require("plugin-config.coc")
 require("plugin-config.nvim-notify")
 require("plugin-config.gitsigns")
+require("plugin-config.toggleterm")
 
