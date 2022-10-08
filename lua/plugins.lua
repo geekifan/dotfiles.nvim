@@ -36,4 +36,5 @@ packer.startup(function()
     use "folke/which-key.nvim"
     use {"neoclide/coc.nvim", branch = "release"}
     use "rcarriga/nvim-notify"
+    use "lewis6991/gitsigns.nvim"
 end)
