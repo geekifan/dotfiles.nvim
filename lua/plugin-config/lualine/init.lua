@@ -57,6 +57,7 @@ lualine.setup({
         },
         lualine_x = {
             components.diagnostics,
+            components.encoding,
             -- components.lsp,
             -- components.spaces,
             components.filetype,
