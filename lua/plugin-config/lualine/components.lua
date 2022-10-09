@@ -1,6 +1,6 @@
-icons = require("icons")
-colors = require("plugin-config.lualine.colors")
-conditions = require("plugin-config.lualine.conditions")
+local icons = require("icons")
+local colors = require("plugin-config.lualine.colors")
+local conditions = require("plugin-config.lualine.conditions")
 
 local separator = icons.ui.LineMiddle
 local function diff_source()
@@ -57,8 +57,8 @@ return {
         if vim.bo.filetype == "python" then
             local venv = os.getenv "CONDA_DEFAULT_ENV" or os.getenv "VIRTUAL_ENV"
             if venv then
-            local icons = require "nvim-web-devicons"
-            local py_icon, _ = icons.get_icon ".py"
+            local devicons = require "nvim-web-devicons"
+            local py_icon, _ = devicons.get_icon ".py"
             return string.format(" " .. py_icon .. " (%s)", utils.env_cleanup(venv))
             end
         end
@@ -69,7 +69,7 @@ return {
     },
     diagnostics = {
         "diagnostics",
-        sources = { "nvim_diagnostic" },
+        sources = { "coc" },
         symbols = {
         error = icons.diagnostics.BoldError .. " ",
         warn = icons.diagnostics.BoldWarning .. " ",
@@ -127,7 +127,7 @@ return {
     --     color = { gui = "bold" },
     --     cond = conditions.hide_in_width,
     -- },
-    location = { "location", color = location_color },
+    location = { "location" },
     progress = {
         "progress",
         fmt = function()

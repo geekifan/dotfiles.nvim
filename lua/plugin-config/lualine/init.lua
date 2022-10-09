@@ -4,22 +4,17 @@ if not status then
     return
 end
 
-icons = require("icons")
-components = require("plugin-config.lualine.components")
+local components = require("plugin-config.lualine.components")
 
 lualine.setup({
     options = {
         disabled_filetypes = {"NvimTree", "Packer"},
         theme = "onedark",
         component_separators = {
-            -- left = icons.ui.LineMiddle,
-            -- right = icons.ui.LineMiddle, 
             left = "",
             right = "",
         },
         section_separators = {
-            -- left = icons.ui.LineMiddle,
-            -- right = icons.ui.LineMiddle, 
             left = "",
             right = "",
         },
@@ -42,8 +37,8 @@ lualine.setup({
             -- components.spaces,
             components.filetype,
         },
-        lualine_y = { 
-            components.location 
+        lualine_y = {
+            components.location
         },
         lualine_z = {
             components.progress,
@@ -66,8 +61,8 @@ lualine.setup({
             -- components.spaces,
             components.filetype,
         },
-        lualine_y = { 
-            components.location 
+        lualine_y = {
+            components.location
         },
         lualine_z = {
             components.progress,
