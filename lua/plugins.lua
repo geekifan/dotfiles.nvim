@@ -23,7 +23,6 @@ end
 packer.startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
-    use "projekt0n/github-nvim-theme"
     use {"famiu/bufdelete.nvim", commit = "46255e4"} --use old version for neovim 7.2
     use {"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"}
     use {"akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons"}
@@ -38,4 +37,5 @@ packer.startup(function()
     use "rcarriga/nvim-notify"
     use "lewis6991/gitsigns.nvim"
     use {"akinsho/toggleterm.nvim", tag = "*"}
+    use "navarasu/onedark.nvim"
 end)

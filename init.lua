@@ -1,10 +1,7 @@
 require("basic")
 require("keybindings")
 require("plugins")
-require("github-theme").setup({
-    theme_style = "dimmed",
-    hide_inactive_statusline = false,
-})
+require("onedark").load()
 require("plugin-config.nvim-tree")
 require("plugin-config.bufferline")
 require("plugin-config.nvim-treesitter")

@@ -11,7 +11,7 @@ My plugin list:
 |     Name    | Introduction |
 |     ----    |     ----     |
 | [packer.nvim](https://github.com/wbthomason/packer.nvim) | Plugin manager |
-| [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme) | Github color theme |
+| [navarasu/onedark.nvim](https://github.com/navarasu/onedark.nvim)| Onedark color theme |
 | [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) | Provide commands to delete buffers without messing up window layout |
 | [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) | File explorer |
 | [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | Beautiful tabs |
