@@ -18,4 +18,6 @@ wk.setup({
         position = "bottom",
     },
 })
-wk.register(keys)
+wk.register(keys, { mode = "n" })
+wk.register(keys, { mode = "x" })
+wk.register(keys, { mode = "v" })
