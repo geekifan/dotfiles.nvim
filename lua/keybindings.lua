@@ -56,6 +56,9 @@ vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
 vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
 vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
 
+-- treesitter fold
+map("n", "zz", ":foldclose<CR>", opt)
+map("n", "Z", ":foldopen<CR>", opt)
 
 local pluginKeys = {}
 
@@ -104,6 +107,11 @@ pluginKeys.whichKeyList = {
     ["<leader>cm"] = { "<cmd>CocList marketplace<cr>", "Marketplace"},
     ["<leader>ce"] = { "<cmd>CocList extensions<cr>", "Installed Extensions"},
     ["<leader>cc"] = { "<cmd>CocConfig<cr>", "Open Coc Config"},
+    ["<leader>ca"] =  { "<cmd>CocList diagnostics<cr>", "Show All Diagnostics"},
+    ["<leader>cj"] = { "<cmd>CocPrev<cr>", "Do Default Action For Next Item"},
+    ["<leader>ck"] = { "<cmd>CocNext<cr>", "Do Default Action For Previous Item"},
+    ["<leader>cf"] = { "<Plug>(coc-format-selected)", "Format Selected Code"},
+    ["<leader>cr"] = { "<cmd>CocListResume<cr>", "Resume Latest Coc List"},
 
     ["<leader>d"] = {"<cmd>Dashboard<cr>", "Dashboard"},
 }
