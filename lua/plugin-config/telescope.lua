@@ -4,6 +4,20 @@ if not status then
     return
 end
 
-telescope.setup()
+local icons = require("icons")
+
+telescope.setup({
+    defaults = {
+        prompt_prefix = " " .. icons.ui.Search .. " ",
+        entry_prefix = "   ",
+        selection_caret = "   ",
+        sorting_strategy = "ascending",
+        layout_config = {
+            horizontal = {
+                prompt_position = "top",
+            }
+        }
+    }
+})
 telescope.load_extension("projects")
 
