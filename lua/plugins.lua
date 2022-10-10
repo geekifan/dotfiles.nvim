@@ -38,4 +38,5 @@ packer.startup(function()
     use "lewis6991/gitsigns.nvim"
     use {"akinsho/toggleterm.nvim", tag = "*"}
     use "navarasu/onedark.nvim"
+    use "ahmedkhalf/project.nvim"
 end)

@@ -5,4 +5,5 @@ if not status then
 end
 
 telescope.setup()
+telescope.load_extension("projects")
 

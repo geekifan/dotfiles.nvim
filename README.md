@@ -26,3 +26,4 @@ My plugin list:
 | [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | Beautiful neovim notification window |
 | [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git integrations |
 | [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Terminal support |
+| [ahmedkhalf/project.nvim](https://github.com/ahmedkhalf/project.nvim) | Project manager |

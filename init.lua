@@ -15,4 +15,5 @@ require("plugin-config.coc")
 require("plugin-config.nvim-notify")
 require("plugin-config.gitsigns")
 require("plugin-config.toggleterm")
+require("plugin-config.project")
 
