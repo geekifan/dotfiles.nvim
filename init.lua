@@ -1,7 +1,7 @@
 require("basic")
 require("keybindings")
 require("plugins")
-require("onedark").load()
+require("plugin-config.onedark")
 require("plugin-config.nvim-tree")
 require("plugin-config.bufferline")
 require("plugin-config.nvim-treesitter")
