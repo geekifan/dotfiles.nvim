@@ -26,9 +26,6 @@ nvim_tree.setup({
             enable = true,
         },
         icons = {
-            show = {
-                folder_arrow = false,
-            },
             glyphs = {
                 git = {
                     unstaged = icons.git.FileUnstaged,
