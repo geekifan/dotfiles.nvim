@@ -10,7 +10,7 @@ telescope.setup({
     defaults = {
         prompt_prefix = " " .. icons.ui.Search .. " ",
         entry_prefix = "   ",
-        selection_caret = "   ",
+        selection_caret = " " .. icons.ui.Forward .. " ",
         sorting_strategy = "ascending",
         layout_config = {
             horizontal = {
