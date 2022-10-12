@@ -98,7 +98,7 @@ return {
         FolderSymlink = "",
         Forward = "",
         Gear = "",
-        History = "",
+        History = "",
         Lightbulb = "",
         LineLeft = "▏",
         LineMiddle = "│",
