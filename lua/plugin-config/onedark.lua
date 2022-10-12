@@ -6,7 +6,8 @@ end
 
 onedark.setup({
     colors = {
-        bright_yellow = "#eeeeb3"
+        bright_yellow = "#eeeeb3",
+        bright_blue = "#bde0fe",
     },
     highlights = {
         TelescopeBorder = {fg = "$fg"},
@@ -18,6 +19,10 @@ onedark.setup({
         DiagnosticHint = {fg = "$bright_yellow"},
         DiagnosticVirtualTextHint = {fg = "$bright_yellow"},
         DiagnosticUnderlineHint = {sp = "$bright_yellow"},
+        DashboardHeader = {fg = "$blue"},
+        DashboardFooter = {fg = "$bright_blue"},
+        DashboardCenter = {fg = "$fg"},
+        DashboardShortCut = {fg = "$orange"},
     }
 })
 
