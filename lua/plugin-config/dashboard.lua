@@ -66,7 +66,11 @@ local function custom_footer()
         local plugin = " " .. count .. " plugins"
         footer = footer .. " " .. plugin
     end
-    return { footer }
+    return {
+        "",
+        "",
+        footer,
+    }
 end
 
 dashboard.custom_footer = custom_footer
