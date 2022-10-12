@@ -98,6 +98,7 @@ pluginKeys.whichKeyList = {
     ["<leader>fe"] = { "<cmd>NvimTreeToggle<cr>", "Toggle File Explorer" },
     ["<leader>fg"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", "Projects"},
+    ["<leader>fn"] = { "<cmd>new<cr>", "New File"},
 
     ["<leader>b"] = { name = "Buffer" },
     ["<leader>bs"] = { "<cmd>Telescope buffers<cr>", "Show Buffers" },
