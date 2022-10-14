@@ -16,4 +16,5 @@ require("plugin-config.nvim-notify")
 require("plugin-config.gitsigns")
 require("plugin-config.toggleterm")
 require("plugin-config.project")
+require("plugin-config.autosave")
 

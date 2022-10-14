@@ -39,4 +39,5 @@ packer.startup(function()
     use {"akinsho/toggleterm.nvim", tag = "*"}
     use "navarasu/onedark.nvim"
     use "ahmedkhalf/project.nvim"
+    use "Pocco81/auto-save.nvim"
 end)

@@ -115,6 +115,7 @@ pluginKeys.whichKeyList = {
     ["<leader>cr"] = { "<cmd>CocListResume<cr>", "Resume Latest Coc List"},
 
     ["<leader>d"] = {"<cmd>Dashboard<cr>", "Dashboard"},
+    ["<leader>a"] = {"<cmd>ASToggle<cr>", "Toggle Autosave"}
 }
 
 return pluginKeys
