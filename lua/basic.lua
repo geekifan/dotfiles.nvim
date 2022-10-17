@@ -52,5 +52,3 @@ vim.opt.termguicolors = true
 -- vim.o.listchars = "space:·,tab:····"
 -- 补全增强
 vim.o.wildmenu = true
--- 配置剪切板
-vim.opt.clipboard = "unnamedplus"
