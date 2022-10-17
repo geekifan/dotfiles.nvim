@@ -17,4 +17,5 @@ require("plugin-config.gitsigns")
 require("plugin-config.toggleterm")
 require("plugin-config.project")
 require("plugin-config.autosave")
+require("plugin-config.vista")
 

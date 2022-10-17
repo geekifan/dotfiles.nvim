@@ -40,4 +40,5 @@ packer.startup(function()
     use "navarasu/onedark.nvim"
     use "ahmedkhalf/project.nvim"
     use "Pocco81/auto-save.nvim"
+    use "liuchengxu/vista.vim"
 end)
