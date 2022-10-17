@@ -8,7 +8,7 @@ local components = require("plugin-config.lualine.components")
 
 lualine.setup({
     options = {
-        disabled_filetypes = {"NvimTree", "Packer"},
+        disabled_filetypes = {"NvimTree", "Packer", "vista", "vista_markdown"},
         theme = "onedark",
         component_separators = {
             left = "",
