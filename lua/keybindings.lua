@@ -37,16 +37,18 @@ map("n", "<C-A-k>", "<C-w>k", opt)
 map("n", "<C-A-l>", "<C-w>l", opt)
 
 -- vertical resize
-map("n", "<C-Left>", ":vertical resize -2<CR>", opt)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opt)
+map("n", "<C-A-Left>", ":vertical resize -2<CR>", opt)
+map("n", "<C-A-Right>", ":vertical resize +2<CR>", opt)
 
 -- horizontal resize
-map("n", "<C-Down>", ":resize +2<CR>", opt)
-map("n", "<C-Up>", ":resize -2<CR>", opt)
+map("n", "<C-A-Down>", ":resize +2<CR>", opt)
+map("n", "<C-A-Up>", ":resize -2<CR>", opt)
 
 -- bufferline bindings
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<C-Left>", ":BufferLineMovePrev<CR>", opt)
+map("n", "<C-Right>", ":BufferLineMoveNext<CR>", opt)
 
 -- toggleterm bindings
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -103,6 +105,7 @@ pluginKeys.whichKeyList = {
     ["<leader>b"] = { name = "Buffer" },
     ["<leader>bs"] = { "<cmd>Telescope buffers<cr>", "Show Buffers" },
     ["<leader>bc"] = { "<cmd>Bdelete<cr>", "Close Buffer" },
+    ["<leader>bp"] = { "<cmd>BufferLineTogglePin<cr>", "Toggle Pin Current Buffer" },
 
     ["<leader>c"] = { name = "Coc"},
     ["<leader>cm"] = { "<cmd>CocList marketplace<cr>", "Marketplace"},
