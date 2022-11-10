@@ -27,3 +27,4 @@ My plugin list:
 | [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git integrations |
 | [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Terminal support |
 | [ahmedkhalf/project.nvim](https://github.com/ahmedkhalf/project.nvim) | Project manager |
+| [tpope/vim-surround](https://github.com/tpope/vim-surround) | Surroundings support |

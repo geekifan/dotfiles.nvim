@@ -41,4 +41,5 @@ packer.startup(function()
     use "ahmedkhalf/project.nvim"
     use "Pocco81/auto-save.nvim"
     use "liuchengxu/vista.vim"
+    use "tpope/vim-surround"
 end)
