@@ -4,7 +4,7 @@
 
 This is my neovim configuration written in lua. I use [packer.nvim](https://github.com/wbthomason/packer.nvim) as my plugin manager.
 
-## Details
+## Plugin List
 
 My plugin list:
 
