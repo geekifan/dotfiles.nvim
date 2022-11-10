@@ -28,3 +28,39 @@ My plugin list:
 | [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Terminal support |
 | [ahmedkhalf/project.nvim](https://github.com/ahmedkhalf/project.nvim) | Project manager |
 | [tpope/vim-surround](https://github.com/tpope/vim-surround) | Surroundings support |
+
+
+## Getting Started
+
+This section should guide you to run your neovim using this configuration.
+
+[Neovim 0.8.0](https://github.com/neovim/neovim/releases/tag/v0.8.0) is highly recomended for this configuration to work.
+
+There are no required dependencies. You can refer to the homepage of each plugin for optional dependencies.
+
+### Installation
+
+Clone this repository to `~/.config` (create one if not existed) and rename `dotfiles.nvim` to `nvim`:
+
+```
+git clone https://github.com/geekifan/dotfiles.nvim.git ~/.config && mv ~/.config/dotfiles.nvim ~/.config/nvim
+```
+
+Then start neovim and the package manager `Packer.nvim` should bootstrap.
+
+Restart neovim after `Packer.nvim` bootstrapping and enter command `:PackerSync` to download all the plugins. There may be `nvim-treesitter` failures due to `TSUpdate`. Just ignore it.
+
+Restart neovim again and everything is ok.
+
+### Usage
+
+Install treesitter:
+
+`:TSInstall the-language-you-want-to-install`
+
+**I recommend you to run `:TSInstall all` to get all language treesitters.**
+
+Install coc marketplace:
+
+`:CocInstall coc-marketplace`
+
