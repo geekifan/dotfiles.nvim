@@ -2,5 +2,8 @@
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.infoSign": "",
-    "diagnostic.hintSign": "ﯦ"
+    "diagnostic.hintSign": "ﯦ",
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.refreshOnInsertMode": true,
+    "Lua.diagnostics.globals": ["vim", "use"]
 }
