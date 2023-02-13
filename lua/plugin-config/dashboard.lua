@@ -6,9 +6,7 @@ end
 
 icons = require("icons")
 
-dashboard.hide_tabline = false
-
-dashboard.custom_header = {
+local header = {
     [[]],
     [[]],
     [[]],
@@ -24,7 +22,7 @@ dashboard.custom_header = {
     [[]],
 }
 
-dashboard.custom_center = {
+local center = {
     {
         icon = icons.ui.NewFile .. " ",
         desc = "New File                            ",
@@ -57,7 +55,7 @@ dashboard.custom_center = {
     }
 }
 
-local function custom_footer()
+local function footer()
     local msg = icons.git.Octoface .. " geekifan"
     local version = icons.ui.Dashboard .. " " .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
     local footer = msg .. " " .. version
@@ -73,5 +71,12 @@ local function custom_footer()
     }
 end
 
-dashboard.custom_footer = custom_footer
 
+dashboard.setup {
+    theme = "doom",
+    config = {
+        header = header,
+        center = center,
+        footer = footer,
+    },
+}
