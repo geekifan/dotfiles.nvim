@@ -36,7 +36,6 @@ This section should guide you to run your neovim using this configuration.
 
 [Neovim 0.8.0](https://github.com/neovim/neovim/releases/tag/v0.8.0) is highly recomended for this configuration to work.
 
-There are no required dependencies. You can refer to the homepage of each plugin for optional dependencies.
 
 ### Required Dependencies
 
