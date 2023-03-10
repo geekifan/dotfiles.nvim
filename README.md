@@ -38,12 +38,18 @@ This section should guide you to run your neovim using this configuration.
 
 There are no required dependencies. You can refer to the homepage of each plugin for optional dependencies.
 
+### Required Dependencies
+
+- [node.js](https://nodejs.org/en/) >= 14.14 (required by [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) )
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (required by [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)) 
+- [fd](https://github.com/sharkdp/fd) (required by [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)) 
+
 ### Installation
 
-Clone this repository to `~/.config` (create one if not existed) and rename `dotfiles.nvim` to `nvim`:
+Clone this repository to `~/.config/nvim` (create one if not existed):
 
 ```
-git clone https://github.com/geekifan/dotfiles.nvim.git ~/.config && mv ~/.config/dotfiles.nvim ~/.config/nvim
+git clone https://github.com/geekifan/dotfiles.nvim.git ~/.config/nvim
 ```
 
 Then start neovim and the package manager `Packer.nvim` should bootstrap.
