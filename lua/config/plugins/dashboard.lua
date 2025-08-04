@@ -4,7 +4,7 @@ if not status then
     return
 end
 
-icons = require("icons")
+local icons = require("config.icons")
 
 local header = {
     [[]],
@@ -73,8 +73,11 @@ end
 
 
 dashboard.setup {
-    theme = "doom",
+    theme = "hyper",
     config = {
+        week_header = {
+            enable = true,
+        },
         header = header,
         center = center,
         footer = footer,

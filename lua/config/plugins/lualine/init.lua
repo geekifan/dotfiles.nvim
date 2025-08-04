@@ -4,12 +4,12 @@ if not status then
     return
 end
 
-local components = require("plugin-config.lualine.components")
+local components = require("config.plugins.lualine.components")
 
 lualine.setup({
     options = {
         disabled_filetypes = {"NvimTree", "Packer", "vista", "vista_markdown"},
-        theme = "onedark",
+        theme = "auto",
         component_separators = {
             left = "",
             right = "",

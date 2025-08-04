@@ -1,6 +1,6 @@
-local icons = require("icons")
-local colors = require("plugin-config.lualine.colors")
-local conditions = require("plugin-config.lualine.conditions")
+local icons = require("config.icons")
+local colors = require("config.plugins.lualine.colors")
+local conditions = require("config.plugins.lualine.conditions")
 
 local separator = icons.ui.LineMiddle
 local function diff_source()
