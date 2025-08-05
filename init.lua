@@ -1,7 +1,7 @@
 require("config.basic")
+require("config.keybindings")
 require("config.lazy")
 require("config.icons")
-require("config.keybindings")
 require("config.plugins.lualine")
 require("config.plugins.dashboard")
 vim.cmd("colorscheme dayfox")
