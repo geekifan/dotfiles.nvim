@@ -1,6 +1,6 @@
 local icons = require("config.icons")
-local colors = require("config.plugins.lualine.colors")
-local conditions = require("config.plugins.lualine.conditions")
+local colors = require("plugins.lualine.colors")
+local conditions = require("plugins.lualine.conditions")
 
 local separator = icons.ui.LineMiddle
 local function diff_source()
@@ -53,7 +53,7 @@ return {
     },
     python_env = {
         function()
-        local utils = require "plugin-config.lualine.utils"
+        local utils = require "plugins.lualine.utils"
         if vim.bo.filetype == "python" then
             local venv = os.getenv "CONDA_DEFAULT_ENV" or os.getenv "VIRTUAL_ENV"
             if venv then
