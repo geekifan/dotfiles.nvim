@@ -1,9 +1,3 @@
-local status, dashboard = pcall(require, "dashboard")
-if not status then
-    vim.notify("dashboard not found")
-    return
-end
-
 local icons = require("config.icons")
 
 local header = {
@@ -71,15 +65,19 @@ local function footer()
     }
 end
 
-
-dashboard.setup {
-    theme = "hyper",
-    config = {
-        week_header = {
-            enable = true,
+return {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+        theme = "hyper",
+        config = {
+            week_header = {
+                enable = true,
+            },
+            header = header,
+            center = center,
+            footer = footer,
         },
-        header = header,
-        center = center,
-        footer = footer,
-    },
+    }
 }

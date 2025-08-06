@@ -1,11 +1,6 @@
 return {
     { "EdenEast/nightfox.nvim" },
     {
-        "nvimdev/dashboard-nvim",
-        event = "VimEnter",
-        dependencies = { "nvim-tree/nvim-web-devicons" }
-    },
-    {
         "folke/flash.nvim",
         event = "VeryLazy",
         ---@type Flash.Config
