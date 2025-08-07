@@ -21,8 +21,6 @@ local opt = {
 -- quick move
 map("n", "<C-u>", "8k", opt)
 map("n", "<C-d>", "8j", opt)
-map("n", "<C-j>", "5j", opt)
-map("n", "<C-k>", "5k", opt)
 
 -- esc
 map("i", "jj", "<esc>", opt)
@@ -31,24 +29,24 @@ map("i", "jj", "<esc>", opt)
 map("n", "<C-a>", "GVgg", opt)
 
 -- window move
-map("n", "<C-A-h>", "<C-w>h", opt)
-map("n", "<C-A-j>", "<C-w>j", opt)
-map("n", "<C-A-k>", "<C-w>k", opt)
-map("n", "<C-A-l>", "<C-w>l", opt)
+map("n", "<C-h>", "<C-w>h", opt)
+map("n", "<C-j>", "<C-w>j", opt)
+map("n", "<C-k>", "<C-w>k", opt)
+map("n", "<C-l>", "<C-w>l", opt)
 
 -- vertical resize
-map("n", "<C-A-Left>", ":vertical resize -2<CR>", opt)
-map("n", "<C-A-Right>", ":vertical resize +2<CR>", opt)
+map("n", "<C-Left>", ":vertical resize +2<CR>", opt)
+map("n", "<C-Right>", ":vertical resize -2<CR>", opt)
 
 -- horizontal resize
-map("n", "<C-A-Down>", ":resize +2<CR>", opt)
-map("n", "<C-A-Up>", ":resize -2<CR>", opt)
+map("n", "<C-Down>", ":resize +2<CR>", opt)
+map("n", "<C-Up>", ":resize -2<CR>", opt)
 
 -- bufferline bindings
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<C-Left>", ":BufferLineMovePrev<CR>", opt)
-map("n", "<C-Right>", ":BufferLineMoveNext<CR>", opt)
+-- map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+-- map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- map("n", "<C-Left>", ":BufferLineMovePrev<CR>", opt)
+-- map("n", "<C-Right>", ":BufferLineMoveNext<CR>", opt)
 
 -- toggleterm bindings
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -122,4 +120,17 @@ pluginKeys.whichKeyList = {
     ["<leader>v"] = {"<cmd>Vista!!<cr>", "Toggle Vista"},
 }
 
-return pluginKeys
+local keys = {}
+
+keys.whichkey = {
+    {
+        "<leader>?",
+        function()
+        require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+    },
+    { "<leader>x", "<cmd>Bdelete<cr>", desc = "Force Close Buffer" },
+}
+
+return keys
