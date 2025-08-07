@@ -29,9 +29,9 @@ return {
         window = {
             mappings = {
                 -- 在打开窗口时，使用快捷键切换到文件浏览器、缓冲区、git状态
-                ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
-                ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
-                ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
+                ['1'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
+                ['2'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
+                ['3'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
                 ["P"] = { "toggle_preview", config = { use_float = false } },
             },
         },
