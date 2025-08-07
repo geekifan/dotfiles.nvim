@@ -52,3 +52,7 @@ vim.opt.termguicolors = true
 -- vim.o.listchars = "space:·,tab:····"
 -- 补全增强
 vim.o.wildmenu = true
+
+vim.o.list = true
+vim.o.listchars = "space:·,tab:>-,eol:↵,extends:»,precedes:«,nbsp:␣,trail:·"
+vim.o.showbreak = "↪"
