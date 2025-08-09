@@ -10,17 +10,6 @@ return {
                 }
             }
         }},
-        {
-            "mason-org/mason-lspconfig.nvim",
-            opts = {
-                ensure_installed = {
-                    -- python
-                    "pyright",
-                    "pylint",
-                    "debugpy",
-                    "yapf",
-                }
-            }
-        }
+        { "mason-org/mason-lspconfig.nvim", opts = {} },
     },
 }
