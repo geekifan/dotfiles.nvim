@@ -12,6 +12,9 @@ return {
                 text = "Sidebar",
                 text_align = "center"
             }},
+            close_command = function()
+                Snacks.bufdelete()
+            end,
         },
     }
 }
