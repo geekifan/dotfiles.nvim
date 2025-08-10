@@ -191,7 +191,7 @@ return {
             for _, name in ipairs(opts.ensure_installed) do
                 local p = mr.get_package(name)
                 if not p:is_installed() then
-                    vim.notify("Mason is installing " .. name)
+                    vim.notify("Installing " .. name, "info", { title = "Mason.nvim" })
                     p:install()
                 end
             end
