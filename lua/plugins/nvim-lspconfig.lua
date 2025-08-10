@@ -1,5 +1,6 @@
 local icons = require("config.icons")
 
+-- The config is from LazyVim
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -40,6 +41,62 @@ return {
                     [vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
                 },
             },
+        },
+        ensure_installed = {
+            -- python
+            "pyright", -- lsp
+            "pylint", -- linter
+            "debugpy", -- debugger
+            "yapf", -- formatter
+            -- other
+            "copilot-language-server",
+        },
+        -- LSP Server Settings
+        ---@type lspconfig.options
+        servers = {
+            lua_ls = {
+                -- mason = false, -- set to false if you don't want this server to be installed with mason
+                -- Use this to add any additional keymaps
+                -- for specific lsp servers
+                -- ---@type LazyKeysSpec[]
+                -- keys = {},
+                settings = {
+                    Lua = {
+                        workspace = {
+                            checkThirdParty = false,
+                        },
+                        codeLens = {
+                            enable = true,
+                        },
+                        completion = {
+                            callSnippet = "Replace",
+                        },
+                        doc = {
+                            privateName = { "^_" },
+                        },
+                        hint = {
+                            enable = true,
+                            setType = false,
+                            paramType = true,
+                            paramName = "Disable",
+                            semicolon = "Disable",
+                            arrayIndex = "Disable",
+                        },
+                    },
+                },
+            },
+        },
+        -- you can do any additional lsp server setup here
+        -- return true if you don't want this server to be setup with lspconfig
+        ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+        setup = {
+            -- example to setup with typescript.nvim
+            -- tsserver = function(_, opts)
+            --   require("typescript").setup({ server = opts })
+            --   return true
+            -- end,
+            -- Specify * to use this function as a fallback for any server
+            -- ["*"] = function(server, opts) end,
         },
     },
     config = function(_, opts)
@@ -90,6 +147,80 @@ return {
         end
 
         vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
+
+        local servers = opts.servers
+        local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+        local has_blink, blink = pcall(require, "blink.cmp")
+        local capabilities = vim.tbl_deep_extend(
+        "force",
+        {},
+        vim.lsp.protocol.make_client_capabilities(),
+        has_cmp and cmp_nvim_lsp.default_capabilities() or {},
+        has_blink and blink.get_lsp_capabilities() or {},
+        opts.capabilities or {}
+        )
+
+        local function setup(server)
+            local server_opts = vim.tbl_deep_extend("force", {
+                capabilities = vim.deepcopy(capabilities),
+            }, servers[server] or {})
+            if server_opts.enabled == false then
+                return
+            end
+
+            if opts.setup[server] then
+                if opts.setup[server](server, server_opts) then
+                    return
+                end
+            elseif opts.setup["*"] then
+                if opts.setup["*"](server, server_opts) then
+                    return
+                end
+            end
+            require("lspconfig")[server].setup(server_opts)
+        end
+
+        -- get all the servers that are available through mason-lspconfig
+        local have_mason, mlsp = pcall(require, "mason-lspconfig")
+        local all_mslp_servers = {}
+        if have_mason then
+            all_mslp_servers = require("mason-lspconfig").get_mappings().lspconfig_to_package
+            -- install the servers that are not installed
+            local mr = require("mason-registry")
+            local installers = require("mason-core.installer")
+            for _, name in ipairs(opts.ensure_installed) do
+                local p = mr.get_package(name)
+                if not p:is_installed() then
+                    p:install()
+                end
+            end
+        end
+
+        local ensure_installed = {} ---@type string[]
+        for server, server_opts in pairs(servers) do
+            if server_opts then
+                server_opts = server_opts == true and {} or server_opts
+                if server_opts.enabled ~= false then
+                    -- run manual setup if mason=false or if this is a server that cannot be installed with mason-lspconfig
+                    if server_opts.mason == false or not vim.tbl_contains(all_mslp_servers, server) then
+                        setup(server)
+                    else
+                        ensure_installed[#ensure_installed + 1] = server
+                    end
+                end
+            end
+        end
+
+        if have_mason then
+            mlsp.setup({
+                ensure_installed = vim.tbl_deep_extend(
+                    "force",
+                    ensure_installed,
+                    {}
+                ),
+                handlers = { setup },
+            })
+        end
 
     end
 }
