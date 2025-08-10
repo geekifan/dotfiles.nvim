@@ -11,7 +11,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         options = {
-            disabled_filetypes = {"NvimTree", "Packer", "vista", "vista_markdown"},
+            disabled_filetypes = {"neo-tree", "Packer", "vista", "vista_markdown"},
             theme = "auto",
             component_separators = {
                 left = "",
