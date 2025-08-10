@@ -1,3 +1,5 @@
+local icons = require("config.icons")
+
 return {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -59,6 +61,24 @@ return {
                 ['4'] = function() vim.api.nvim_exec('Neotree focus document_symbols left', true) end,
                 ["P"] = { "toggle_preview", config = { use_float = false } },
             },
+        },
+        default_component_configs = {
+            git_status = {
+                symbols = {
+                  -- Change type
+                  added     = icons.git.FileAdded, -- NOTE: you can set any of these to an empty string to not show them
+                  deleted   = icons.git.FileDeleted,
+                  modified  = icons.git.FileModified,
+                  renamed   = icons.git.FileRenamed,
+                  -- Status type
+                  untracked = icons.git.FileUntracked,
+                  ignored   = icons.git.FileIgnored,
+                  unstaged  = icons.git.FileUnstaged,
+                  staged    = icons.git.FileStaged,
+                  conflict  = icons.git.FileConflict,
+                },
+                align = "right",
+              },
         },
     },
     -- config = function()
