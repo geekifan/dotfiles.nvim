@@ -22,6 +22,24 @@ return {
           desc = "Explorer",
         },
     },
+    filesystem = {
+        use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
+        -- instead of relying on nvim autocmd events.
+    },
+    -- init = function()
+    --     vim.loop.new_timer():start(1000, 1000, vim.schedule_wrap(function()
+    --         local manager = require("neo-tree.sources.manager")
+    --         local state   = manager.get_state("filesystem")
+    --         -- 当前激活的 source 也是 filesystem 才刷新
+    --         if state
+    --            and state.winid
+    --            and vim.api.nvim_win_is_valid(state.winid)
+    --            and manager.get_active_source(state.winid) == "filesystem"
+    --         then
+    --             require("neo-tree.sources.filesystem.commands").refresh(state)
+    --         end
+    --     end))
+    -- end,
     opts = {
         sources = {
             "filesystem",
