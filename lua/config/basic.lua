@@ -56,3 +56,5 @@ vim.o.wildmenu = true
 vim.o.list = true
 vim.o.listchars = "space:·,tab:>-,eol:↵,extends:»,precedes:«,nbsp:␣,trail:·"
 vim.o.showbreak = "↪"
+
+vim.o.autoread = true
