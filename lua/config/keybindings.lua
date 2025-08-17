@@ -34,6 +34,10 @@ map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-l>", "<C-w>l", opt)
 
+-- switch ctrl-i and ctrl-o
+map("n", "<C-i>", "<C-o>", opt)
+map("n", "<C-o>", "<C-i>", opt)
+
 -- vertical resize
 map("n", "<C-Left>", ":vertical resize +2<CR>", opt)
 map("n", "<C-Right>", ":vertical resize -2<CR>", opt)
@@ -43,10 +47,10 @@ map("n", "<C-Down>", ":resize +2<CR>", opt)
 map("n", "<C-Up>", ":resize -2<CR>", opt)
 
 -- bufferline bindings
--- map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
--- map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
--- map("n", "<C-Left>", ":BufferLineMovePrev<CR>", opt)
--- map("n", "<C-Right>", ":BufferLineMoveNext<CR>", opt)
+map("n", "<C-A-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-A-l>", ":BufferLineCycleNext<CR>", opt)
+-- map("n", "<C-A-H>", ":BufferLineMovePrev<CR>", opt)
+-- map("n", "<C-A-L>", ":BufferLineMoveNext<CR>", opt)
 
 -- toggleterm bindings
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -141,6 +145,21 @@ keys.snacks = {
     { "<leader>r", function() Snacks.picker.recent() end, desc = "Recent" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+    { "<leader>c", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
+    { "<leader>t", function() Snacks.picker.treesitter() end, desc = "Treesitter" },
+    { "<leader>\\", function() Snacks.terminal.toggle(nil, {
+        win = {
+            position = "float",
+            style = "terminal",
+            -- backdrop = 60,
+            -- height = 0.9,
+            -- width = 0.9,
+            -- zindex = 50,
+        },
+    }) end,
+      desc = "Terminal"
+    },
+    
     -- LSP
     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
