@@ -86,6 +86,8 @@ return {
                 ['3'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
                 ['4'] = function() vim.api.nvim_exec('Neotree focus document_symbols left', true) end,
                 ["P"] = { "toggle_preview", config = { use_float = false } },
+                ["S"] = "", -- unset S key to avoid conflict with flash.nvim
+                ["s"] = "", -- unset s key to avoid conflict with flash.nvim
             },
         },
         default_component_configs = {
