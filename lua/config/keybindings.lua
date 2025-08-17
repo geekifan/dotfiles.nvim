@@ -19,8 +19,8 @@ local opt = {
 }
 
 -- quick move
-map("n", "<C-u>", "8k", opt)
-map("n", "<C-d>", "8j", opt)
+-- map("n", "<C-u>", "8k", opt)
+-- map("n", "<C-d>", "8j", opt)
 
 -- esc
 map("i", "jj", "<esc>", opt)
