@@ -58,3 +58,9 @@ vim.o.listchars = "space:·,tab:>-,eol:↵,extends:»,precedes:«,nbsp:␣,trail
 vim.o.showbreak = "↪"
 
 vim.o.autoread = true
+
+-- foldtext
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = "v:lua.vim.treesitter.foldtext()"
+vim.o.foldlevel = 99
