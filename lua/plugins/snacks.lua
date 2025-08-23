@@ -2,9 +2,6 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    init = function()
-        require("snacks").dim.enable()
-    end,
     ---@type snacks.Config
     opts = {
         -- your configuration comes here
@@ -19,6 +16,8 @@ return {
         words = {},
         picker = {},
         bufdelete = {},
+        statuscolumn = {},
+        lazygit = {},
         dashboard = {
             enabled = true,
             sections = {
