@@ -88,6 +88,45 @@ return {
                 ["P"] = { "toggle_preview", config = { use_float = false } },
                 ["S"] = "", -- unset S key to avoid conflict with flash.nvim
                 ["s"] = "", -- unset s key to avoid conflict with flash.nvim
+                ['Y'] = function(state)
+                    -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
+                    -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
+                    local node = state.tree:get_node()
+                    local filepath = node:get_id()
+                    local filename = node.name
+                    local modify = vim.fn.fnamemodify
+
+                    local results = {
+                        filepath,
+                        modify(filepath, ':.'),
+                        modify(filepath, ':~'),
+                        filename,
+                        modify(filename, ':r'),
+                        modify(filename, ':e'),
+                    }
+                    local items = {
+                        { label = 'Absolute path: ' .. results[1],               value = results[1] },
+                        { label = 'Path relative to CWD: ' .. results[2],        value = results[2] },
+                        { label = 'Path relative to HOME: ' .. results[3],       value = results[3] },
+                        { label = 'Filename: ' .. results[4],                    value = results[4] },
+                        { label = 'Filename without extension: ' .. results[5],  value = results[5] },
+                        { label = 'Extension of the filename: ' .. results[6],   value = results[6] },
+                    }
+
+                    vim.ui.select(items, {
+                        prompt = 'Choose to copy to clipboard:',
+                        format_item = function(e) return e.label end,
+                    }, function(choice)
+                        if not choice then          -- 用户按 Esc / <C-c>
+                            return
+                        end
+
+                        local result = choice.value
+                        vim.fn.setreg('"', result)
+                        vim.fn.setreg('+', result)  -- 需要同步系统剪贴板时保留
+                        vim.notify('Copied: ' .. result)
+                    end)
+                end
             },
         },
         default_component_configs = {
