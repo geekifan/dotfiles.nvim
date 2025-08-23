@@ -6,6 +6,9 @@ return {
     },
     opts = {
         options = {
+            numbers = function(opts)
+                return string.format('%s', opts.raise(opts.ordinal))
+            end,
             -- 在顶部左侧给 Neo Tree 留空间
             offsets = {{
                 filetype = "neo-tree",
