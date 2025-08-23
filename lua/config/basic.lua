@@ -64,3 +64,6 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldtext = "v:lua.vim.treesitter.foldtext()"
 vim.o.foldlevel = 99
+
+vim.opt.diffopt="internal,filler,closeoff,indent-heuristic,linematch:60,algorithm:histogram"
+vim.opt.fillchars = { diff = '╱' }

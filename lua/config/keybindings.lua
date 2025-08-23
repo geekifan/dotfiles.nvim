@@ -65,6 +65,13 @@ map("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opt)
 -- vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
 -- vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
 -- vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+vim.keymap.set('n', '<leader>d', function()
+    if next(require('diffview.lib').views) == nil then
+        vim.cmd('DiffviewOpen')
+    else
+        vim.cmd('DiffviewClose')
+    end
+end)
 
 
 local pluginKeys = {}
