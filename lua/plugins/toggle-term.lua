@@ -3,7 +3,7 @@ return {
     version = "*",
     opts = {
         open_mapping = [[<leader>\]],
-        insert_mappings = true,
+        insert_mappings = false,
         terminal_mappings = true,
         direction = "float",
         float_opts = {
