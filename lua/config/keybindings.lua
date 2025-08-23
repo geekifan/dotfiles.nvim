@@ -49,6 +49,16 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 -- bufferline bindings
 map("n", "<C-A-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-A-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", opt)
+map("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", opt)
+map("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", opt)
+map("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", opt)
+map("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", opt)
+map("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", opt)
+map("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", opt)
+map("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", opt)
+map("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", opt)
+-- move buffer
 -- map("n", "<C-A-H>", ":BufferLineMovePrev<CR>", opt)
 -- map("n", "<C-A-L>", ":BufferLineMoveNext<CR>", opt)
 
@@ -135,7 +145,8 @@ keys.whichkey = {
 }
 
 keys.snacks = {
-    { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>l", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>f", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>p", function() Snacks.picker.projects() end, desc = "Projects" },
@@ -144,6 +155,7 @@ keys.snacks = {
     { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
     { "<leader>c", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
     { "<leader>t", function() Snacks.picker.treesitter() end, desc = "Treesitter" },
+    { "<leader>g", function() Snacks.lazygit() end, desc = "Lazy Git" },
     { "<leader>\\", function() Snacks.terminal.toggle(nil, {
         win = {
             position = "float",
