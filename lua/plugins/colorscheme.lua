@@ -1,12 +1,12 @@
 return {
-    {
-        "EdenEast/nightfox.nvim",
-        init = function()
-            vim.cmd("colorscheme dayfox")
-        end,
-    },
+    { "EdenEast/nightfox.nvim" },
     { "folke/tokyonight.nvim" },
     { "projekt0n/github-nvim-theme" },
-    { "catppuccin/nvim" },
+    {
+        "catppuccin/nvim",
+        init = function()
+            vim.cmd("colorscheme catppuccin-frappe")
+        end,
+    },
     { "sainnhe/everforest" },
 }
