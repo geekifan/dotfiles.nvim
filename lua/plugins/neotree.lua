@@ -87,7 +87,13 @@ return {
                 ['4'] = function() vim.api.nvim_exec('Neotree focus document_symbols left', true) end,
                 ["P"] = { "toggle_preview", config = { use_float = false } },
                 ["S"] = "", -- unset S key to avoid conflict with flash.nvim
-                ["s"] = "", -- unset s key to avoid conflict with flash.nvim
+                ["s"] = {
+                    "quick_jump",
+                    config = {
+                        on_jump = "open_or_toggle",
+                        jump_labels = "jfkdlsahgnuvrbytmiceoxwpqz",
+                    },
+                },
                 ['Y'] = function(state)
                     -- NeoTree is based on [NuiTree](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree)
                     -- The node is based on [NuiNode](https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/tree#nuitreenode)
