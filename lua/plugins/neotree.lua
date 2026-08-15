@@ -2,7 +2,7 @@ local icons = require("config.icons")
 
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    branch = "main",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
