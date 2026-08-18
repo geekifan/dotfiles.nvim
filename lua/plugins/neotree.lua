@@ -22,10 +22,6 @@ return {
           desc = "Explorer",
         },
     },
-    filesystem = {
-        use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
-        -- instead of relying on nvim autocmd events.
-    },
     -- init = function()
     --     vim.loop.new_timer():start(1000, 1000, vim.schedule_wrap(function()
     --         local manager = require("neo-tree.sources.manager")
@@ -77,6 +73,16 @@ return {
                     display_name = "  Symbols "                              -- string | nil
                 }
             }
+        },
+        filesystem = {
+            use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
+            -- instead of relying on nvim autocmd events.
+            filtered_items = {
+                visible = false,
+                hide_dotfiles = false,
+                hide_gitignored = false,
+                hide_ignored = false,
+            },
         },
         window = {
             mappings = {
